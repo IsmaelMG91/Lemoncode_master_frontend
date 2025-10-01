@@ -1,0 +1,52 @@
+@use "sass:color" as *;
+//Variables
+$color1:skyblue;
+$color2:rgb(40, 219, 115);
+$color3:rgb(200, 82, 236);
+
+$colores: $color1, $color2, $color3;
+
+$filas:3;
+
+
+//Reglas
+body{
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: 100vh;
+}
+
+@for $i from 1 through $filas {
+  .container-#{$i}{
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+@for $i from 1 through $filas{
+  .container-#{$i}>.base-color{
+    background-color: nth($colores, $i);
+    padding: 30px 8px;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+  }  
+  @for $z from 1 through 4 {
+    .container-#{$i}>.darken-#{$z} {
+      @extend .base-color;
+      background-color:scale($color: nth($colores, $i), $lightness: 15%*-$z);
+      color: White;
+    }
+    .container-#{$i}>.lighten-#{$z} {
+      @extend .base-color;
+      background-color:scale($color: nth($colores, $i), $lightness: 15%*$z);
+      color:black;
+    }
+}
+}
