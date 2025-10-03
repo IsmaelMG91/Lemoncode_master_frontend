@@ -1,0 +1,63 @@
+@use "sass:color" as *;
+
+// Comentar y descomentar "tema-a" y "tema-b" para cambiar entre ellos
+
+@use "tema-a" as *;
+// @use "tema-b" as *;
+
+body{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1px;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.box {
+  box-sizing: border-box;
+  width: 100px;
+  height: 75px;
+  padding: 15px;
+  border: 1px solid black;
+  border-radius: $border_radius;
+  $type:"dark";
+
+  &.color-base {
+    background-color: $base_color;
+  }
+
+  &.color-dark {
+    background-color: scale($color: $base_color, $lightness: -50%);
+  }
+
+  &.color-light {
+    background-color: scale($color: $base_color, $lightness: 75%);
+  }
+
+  &.shadow {
+    box-shadow: $shadow;
+  }
+}
+
+.text {
+  margin: 8px 0px;
+
+  span{
+    &.principal_font{
+      font-family: $principal_font;      
+    }
+    &.secondary_font{
+      font-family: $secondary_font;      
+    }
+  }
+}
+
+
