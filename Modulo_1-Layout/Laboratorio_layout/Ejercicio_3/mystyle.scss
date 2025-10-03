@@ -1,0 +1,37 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  color: black;
+  font-family: 'Segoe UI';
+  display: flex;
+  flex-direction: column;
+}
+
+.menu {
+  color: white;
+  background-color: teal;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+span {
+  padding: 10px;
+
+  &:hover {
+    background-color: rgb(0, 77, 77);
+  }
+}
+
+@media screen and (width < 430px) {
+  .menu {
+    flex-direction: column;
+  }
+  .item_menu {
+    display: flex;
+    justify-content: center;
+  }
+}
