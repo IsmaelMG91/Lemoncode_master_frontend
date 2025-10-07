@@ -1,0 +1,49 @@
+
+body {
+  background-color: rgb(226, 226, 226);
+}
+
+html {
+  font-family: 'Segoe UI';
+  --main-color:rgb(120, 177, 36);
+}
+
+h2 {
+  margin: 5px 0px;
+}
+
+.card > img {
+  max-width: 100%;
+}
+
+.card {
+  background-color: white;
+  display: grid;
+  grid-template: 1fr 2fr / 1fr;
+  max-width: 300px;
+  border: 1px solid grey;
+}
+
+.info {
+  display: grid;
+  padding: 16px;
+}
+
+.published {
+  display: grid;
+  justify-content: end;
+  font-weight: 600;
+}
+
+.date {
+  font-weight: lighter;
+  color: var(--main-color);
+}
+
+.button {
+  display: grid;
+  background-color: var(--main-color);
+  padding: 15px 10px;
+  color: white;
+  justify-items: center;
+}
