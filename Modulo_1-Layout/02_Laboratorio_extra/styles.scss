@@ -1,0 +1,51 @@
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI';
+}
+
+//HEADER STYLE
+header {
+    
+}
+
+.toolbar {
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+.page-title {
+    background-color: lawngreen;
+    color: white;
+    font-size: x-large;
+    box-sizing: border-box;
+    padding: 10px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+
+//MAIN STYLE
+
+.page-container {
+    display: flex;
+    flex-direction: row;
+}
+
+
+nav {
+
+}
+
+main {
+
+}
+
+//FOOTER STYLE
+
+footer {
+    padding: 8px;
+    background-color: bisque;
+}
