@@ -8,7 +8,12 @@ En caso de no existir el libro devolver false
 TIP: Existe un método de Array.prototype que te ayudará a buscar según un patrón.
  */
 
-function isBookRead(books, titleToSearch) {
+interface Books{
+    title: String,
+    isRead: Boolean,
+}
+
+function isBookRead<T extends Array<Books>>(books: T, titleToSearch: String) {
 
     return books.some(book => book.title === titleToSearch && book.isRead === true) ? //.some() comprueba una condición sobre cada elemento del array y devuelve true cuando lo encuentra.
     true : false;

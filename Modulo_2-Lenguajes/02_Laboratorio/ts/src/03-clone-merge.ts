@@ -6,7 +6,7 @@ Clone
 Implementa una función clone que, a partir de un objeto de entrada source devuelva un nuevo objeto con las propiedades de source:
  */
 
-function clone(source) {
+function clone<T extends Object>(source: T) {
     const clonedObject = {...source};
     return clonedObject;
 }
@@ -18,7 +18,7 @@ function clone(source) {
 TIP: Puedes usar la función "clone" del apartado A.
  */
 
-function merge (source, target) {
+function merge<T extends Object, U extends Object>(source: T, target: U) {
     const objectResult = {...target, ...source};
     return objectResult;
 }

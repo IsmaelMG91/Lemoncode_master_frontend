@@ -16,9 +16,9 @@ y reiniciar las monedas almacenadas, ya que las hemos conseguido y han salido de
 
 class SlotMachine {
 
-    coins = 0;
-    slots = [];
-    winner = false;
+    coins: number = 0;
+    slots: Array<Boolean> = [];
+    winner: Boolean = false;
 
     play() {
         for (let i = 0; i <= 3; i++) {
@@ -37,7 +37,6 @@ class SlotMachine {
 
         this.slots = [];
         this.winner = false;
-        console.log(this.coins)
     };
 }
 
