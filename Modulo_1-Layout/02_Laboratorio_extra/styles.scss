@@ -1,13 +1,16 @@
 
 body {
+    display: flex;
+    flex-direction: column;
     margin: 0;
     font-family: 'Segoe UI';
+    min-height: 100vh;
 }
 
 //HEADER STYLE
-header {
+// header {
     
-}
+// }
 
 .toolbar {
     display:flex;
@@ -32,16 +35,86 @@ header {
 .page-container {
     display: flex;
     flex-direction: row;
+    height: 100%;
+    flex: 1;
 }
 
 
 nav {
+    background-color: burlywood;
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+}
 
+.menu-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 1px;
+}
+
+.menu-title{
+    height: 40px;
+    display: flex;
+    align-self: center;
+    align-items: center;
+    font-weight: 900;
+    font-size: larger;
+    color: white;
+}
+
+nav ul {
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 0; 
+}
+
+li {
+    box-sizing: border-box;
+    padding: 8px 16px;
+    background-color: antiquewhite;
+    border-top: 1px solid gray;
+    border-left: 1px solid gray;
+    border-right: 1px solid gray;
+}
+
+li:last-child{
+    border-bottom: 1px solid gray;
 }
 
 main {
-
+    padding: 20px;
+    width: 100%;
 }
+
+.list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    justify-content: center;
+    align-content: center;
+    gap: 20px;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: end;
+    background-color: aquamarine;
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 15px 10px 15px 10px;
+}
+
+.card img {
+    border-radius: 100%;
+}
+
 
 //FOOTER STYLE
 
