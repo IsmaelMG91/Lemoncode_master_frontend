@@ -1,6 +1,7 @@
 import React from "react";
 import { generatePath, Link } from "react-router-dom";
 import { OrganizationContext } from "./context";
+import { routes } from "@/router";
 
 interface MemberEntity {
     id: string,
@@ -19,7 +20,7 @@ export const ListPage : React.FC = () => {
         .then((response) => response.json())
         .then(setMembers)
     }, [org.organization]);
-    //crear un estado para guardar el input y setear el context al hacer submit
+
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         org.setOrganization(comp);
@@ -29,7 +30,7 @@ export const ListPage : React.FC = () => {
         <>
             <h2>List</h2>
             <form onSubmit={handleSubmit}>
-                <input type="text" value ={comp} onChange={(e) => setComp(e.target.value)}/>
+                <input type="text" defaultValue ={org.organization} onChange={(e) => setComp(e.target.value)}/>
                 <button type="submit">Buscar</button>
             </form>
             <div className="list-user-list-container">
@@ -40,7 +41,7 @@ export const ListPage : React.FC = () => {
                     <React.Fragment key={member.id}>
                         <img src={member.avatar_url}/>
                         <span>{member.id}</span>
-                        <Link to={generatePath("/detail/:id", {id: member.login})}>{member.login}</Link>
+                        <Link to={routes.detail(member.login)}>{member.login}</Link>
                     </React.Fragment>
                 ))}
             </div>

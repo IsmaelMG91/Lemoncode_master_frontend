@@ -6,7 +6,7 @@ interface OrganizationModel {
 }
 
 export const OrganizationContext = React.createContext<OrganizationModel>({
-    organization: "lemoncode",
+    organization: "",
     setOrganization: () => undefined,
 });
 

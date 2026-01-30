@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
+import { routes } from "./router";
 
 interface MemberDetailEntity {
     id: string,
@@ -11,10 +12,10 @@ interface MemberDetailEntity {
 
 export const DetailPage : React.FC = () => {
     const [member, setMember] = React.useState<MemberDetailEntity>();
-    const { id } = useParams();
+    const { login } = useParams();
 
     React.useEffect(() => {
-        fetch(`https://api.github.com/users/${id}`)
+        fetch(`https://api.github.com/users/${login}`)
         .then((response) => response.json())
         .then(setMember)
     }, []);
@@ -22,13 +23,13 @@ export const DetailPage : React.FC = () => {
     return (
         <>
             <h2>Detail Page</h2>
-            <h3>User Id: {id}</h3>
+            <h3>User Id: {}</h3>
             <p> id : {member?.id}</p>
             <p> login : {member?.login}</p>
             <p> name : {member?.name}</p>
             <p> company : {member?.company}</p>
             <p> bio : {member?.bio}</p>
-            <Link to="/">Back to list page</Link>
+            <Link to={routes.list}>Back to list page</Link>
         </>
     )
 }
