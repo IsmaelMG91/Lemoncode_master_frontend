@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, useParams } from "react-router-dom";
-import { routes } from "./router";
+import { routes } from "@/router";
+import { ListLayout } from "@/layouts";
 
 interface MemberDetailEntity {
     id: string,
