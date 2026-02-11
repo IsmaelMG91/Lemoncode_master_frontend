@@ -4,18 +4,18 @@ import { BrowserRouter as Router,
   Route,
   Navigate,
 } from "react-router-dom";
-import { ListPod } from "@/pods"
-import { DetailPage } from "@/detail";
 import { switchRoutes } from "@/router";
 import { ListLayout } from "@/layouts";
+import { ListScene } from "@/scenes/list";
+import { DetailScene } from "@/scenes/detail";
 
 export const AppRoutes: React.FC = () => {
     return (
     <Router>
       <ListLayout>
         <Routes>
-          <Route path={switchRoutes.list} element={<ListPod/>}/>
-          <Route path={switchRoutes.detail} element={<DetailPage/>}/>
+          <Route path={switchRoutes.list} element={<ListScene/>}/>
+          <Route path={switchRoutes.detail} element={<DetailScene/>}/>
           <Route path={switchRoutes.root} element= {<Navigate to={switchRoutes.list}/>}/>
         </Routes>
       </ListLayout>

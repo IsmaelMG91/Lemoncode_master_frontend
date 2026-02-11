@@ -1,0 +1,26 @@
+import React from "react";
+import { Link } from "react-router-dom";
+import { routes } from "@/router";
+import * as vm from "./detail.vm";
+
+interface Props {
+    member: vm.MemberDetail,
+}
+
+export const Detail : React.FC<Props> = (props) => {
+    const { member } = props;
+
+    return (
+        <>
+            <h2>Detail Page</h2>
+            <h3>User Id: {member?.id}</h3>
+            <img className="detail-img" src={member?.avatar_url}/>
+            <p> id : {member?.id}</p>
+            <p> login : {member?.login}</p>
+            <p> name : {member?.name}</p>
+            <p> company : {member?.company}</p>
+            <p> bio : {member?.bio}</p>
+            <Link to={routes.list}>Back to list page</Link>
+        </>
+    )
+}

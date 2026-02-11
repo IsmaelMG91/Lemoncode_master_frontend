@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import type { MemberEntity } from "../list.vm";
+import * as vm from "../list.vm";
 import { routes } from "@/router";
 
 interface Props {
-    data: MemberEntity;
+    data: vm.Member;
 }
 
 export const Member: React.FC<Props> = (props) => {

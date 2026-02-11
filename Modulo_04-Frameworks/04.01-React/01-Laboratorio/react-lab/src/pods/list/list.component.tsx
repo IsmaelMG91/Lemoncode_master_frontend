@@ -1,30 +1,23 @@
 import React from "react";
-import type { MemberEntity } from "./list.vm";
-import { Member } from "./components";
+import * as vm from "./list.vm";
+import { Member, TableHeader } from "./components";
+import { SearchButton } from "@/common";
 
 
 interface Props {
-    members: MemberEntity[];
+    members: vm.Member[];
 }
 
 export const List: React.FC<Props> = (props) => {
     const { members } = props;
 
-    return (//sacar botón e input en componente
+    return (
     <>
-        {/* <form onSubmit={handleSubmit}>
-            <input type="text" defaultValue ={org.organization} onChange={(e) => setComp(e.target.value)}/>
-            <button type="submit">Buscar</button>
-        </form> */}
-        {/*sacar header de table en un componente TableHeader*/}
+        <SearchButton></SearchButton>
         <div className="list-user-list-container">
-            <span className="list-header">Avatar</span>
-            <span className="list-header">Id</span>
-            <span className="list-header">Name</span>
+            <TableHeader/>
             {members.map((member) => (
-                <React.Fragment key={member.id}>
-                    <Member data={member}></Member>
-                </React.Fragment>
+                    <Member key={member.id} data={member}></Member>
             ))}
         </div>
     </>

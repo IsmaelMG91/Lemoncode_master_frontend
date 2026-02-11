@@ -1,6 +1,6 @@
 import React from "react";
 
-interface OrganizationModel {
+export interface OrganizationModel {
     organization: string;
     setOrganization: (organization: string) => void;
 }

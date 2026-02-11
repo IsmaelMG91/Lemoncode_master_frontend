@@ -13,7 +13,8 @@
   font-weight: bold;
 }
 
-.list-user-list-container img {
+.list-user-list-container img,
+.detail-img {
   width: 80px;
 }
 
