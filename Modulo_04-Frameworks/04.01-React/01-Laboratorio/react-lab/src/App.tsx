@@ -1,12 +1,15 @@
 
 import { AppRoutes } from "@/router";
-import { OrganizationProvider } from "./context.tsx";
+import { OrganizationProvider } from "./context/organization.context.tsx";
+import { PageProvider } from "./context/page.context.tsx";
 
 export const App: React.FC = () => {
   return (
     <>
     <OrganizationProvider>
-      <AppRoutes/>
+      <PageProvider>
+        <AppRoutes/>
+      </PageProvider>
     </OrganizationProvider>
     </>
   )

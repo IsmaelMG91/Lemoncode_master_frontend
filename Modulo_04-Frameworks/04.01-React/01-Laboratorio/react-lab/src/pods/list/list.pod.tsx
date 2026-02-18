@@ -1,5 +1,5 @@
 import React from "react";
-import { OrganizationContext } from "@/context";
+import { OrganizationContext, PageContext } from "@/context";
 import type { Member } from "./list.vm";
 import { List } from "./list.component";
 import { getMembers } from "./api/api";
@@ -7,23 +7,16 @@ import { mapMembersToVM } from "./list.mappers";
 
 export const ListPod : React.FC = () => {
     const [members, setMembers] = React.useState<Member[]>([]);
-    // const [comp, setComp] = React.useState<string>("lemoncode");
     const org = React.useContext(OrganizationContext);
+    const page = React.useContext(PageContext);
 
     React.useEffect(() => {
-        getMembers(org)
+        getMembers(org, page)
         .then(mapMembersToVM)
         .then(setMembers)
-    }, [org.organization]);
+    }, [org, page]);
 
-    // const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    //     e.preventDefault();
-    //     org.setOrganization(comp);
-    // }
-
-    return (//sacar botón e input en componente
-        <>
+    return (
             <List members={members}></List>
-        </>
     )
 }
