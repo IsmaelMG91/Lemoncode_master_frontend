@@ -1,6 +1,6 @@
 import React from "react";
 import * as vm from "./list.vm";
-import { Member, ShowLessButton, ShowMoreButton, TableHeader } from "./components";
+import { Member, ShowLessButton, ShowMoreButton, TableHeader } from "../components";
 
 
 interface Props {

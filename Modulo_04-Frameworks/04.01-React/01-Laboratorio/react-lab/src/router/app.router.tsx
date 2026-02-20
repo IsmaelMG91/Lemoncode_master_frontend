@@ -8,6 +8,7 @@ import { switchRoutes } from "@/router";
 import { ListLayout } from "@/layouts";
 import { ListScene } from "@/scenes/list";
 import { DetailScene } from "@/scenes/detail";
+import { RickAndMortyListScene } from "@/scenes/rickandmortylist";
 
 export const AppRoutes: React.FC = () => {
     return (
@@ -16,6 +17,7 @@ export const AppRoutes: React.FC = () => {
         <Routes>
           <Route path={switchRoutes.list} element={<ListScene/>}/>
           <Route path={switchRoutes.detail} element={<DetailScene/>}/>
+          <Route path={switchRoutes.rickMortyList} element={<RickAndMortyListScene/>}/>
           <Route path={switchRoutes.root} element= {<Navigate to={switchRoutes.list}/>}/>
         </Routes>
       </ListLayout>

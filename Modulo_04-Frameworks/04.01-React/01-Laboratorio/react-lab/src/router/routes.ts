@@ -4,6 +4,7 @@ interface SwitchRoutes {
     root: string;
     list: string,
     detail: string,
+    rickMortyList: string,
 }
 
 interface DetailRouter extends Omit <SwitchRoutes, "detail">{
@@ -12,8 +13,9 @@ interface DetailRouter extends Omit <SwitchRoutes, "detail">{
 
 export const switchRoutes: SwitchRoutes = {
     root: "/",
-    list: "/list",
+    list: "/member-list",
     detail: "/detail/:login",
+    rickMortyList: "/rick-morty-list",
 }
 
 export const routes: DetailRouter = {

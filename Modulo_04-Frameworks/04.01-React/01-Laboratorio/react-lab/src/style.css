@@ -38,3 +38,8 @@
   justify-content: space-between;
   padding:0px 10px;
 }
+
+.api-options {
+  display: flex;
+  gap: 10px;
+}
