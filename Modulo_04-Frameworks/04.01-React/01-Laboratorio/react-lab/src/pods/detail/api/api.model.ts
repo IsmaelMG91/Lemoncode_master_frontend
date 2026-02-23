@@ -1,3 +1,4 @@
+// Interfaz miembros compañías
 export interface MemberDetail {
   login: string
   id: number
@@ -32,4 +33,30 @@ export interface MemberDetail {
   following: number
   created_at: string
   updated_at: string
+}
+
+// Interfaces Rick and Morty
+export interface CharacterDetail {
+  id: number
+  name: string
+  status: string
+  species: string
+  type: string
+  gender: string
+  origin: Origin
+  location: Location
+  image: string
+  episode: string[]
+  url: string
+  created: string
+}
+
+export interface Origin {
+  name: string
+  url: string
+}
+
+export interface Location {
+  name: string
+  url: string
 }

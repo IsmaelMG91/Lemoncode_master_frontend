@@ -1,5 +1,7 @@
 import React from "react";
 import { SearchButton } from "@/common";
+import { Link } from "react-router-dom";
+import { routes } from "@/router";
 
 export const Header: React.FC = () => {
         return (
@@ -7,8 +9,8 @@ export const Header: React.FC = () => {
                <div className="layout-app-header">
                 <SearchButton/>
                 <div className="api-options">
-                    <span>Company</span>
-                    <span>Rick and Morty</span>
+                    <Link to={routes.list}>Company</Link>
+                    <Link to={routes.rickMortyList}>Rick and Morty</Link>
                 </div>
                 User Logged in
                 </div>

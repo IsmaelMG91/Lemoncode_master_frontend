@@ -14,7 +14,7 @@ export const Character: React.FC<Props> = (props) => {
         <>
             <img src={data.image}/>
             <span>{data.id}</span>
-            <Link to={routes.detail(data.name)}>{data.name}</Link>
+            <Link to={routes.characterDetail(data.id)}>{data.id}</Link>
         </>
     )
 }

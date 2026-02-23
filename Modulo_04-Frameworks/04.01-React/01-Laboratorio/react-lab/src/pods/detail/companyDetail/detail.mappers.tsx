@@ -1,4 +1,4 @@
-import * as am from "./api/api.model";
+import * as am from "../api/api.model";
 import * as vm from "./detail.vm";
 
 export const mapMemberDetailToVM = (data: am.MemberDetail):vm.MemberDetail => ({

@@ -9,9 +9,6 @@ export const getMembers = async (org:OrganizationModel, page:PageModel): Promise
 }
 
 export const getRickAndMortyCharacters = async () : Promise<RickAndMortyCharacter[]> => {
-    // const response = await fetch(`https://rickandmortyapi.com/api/character`)
-    // const data = await response.json();
-    // return data.results;
 
     return (
         fetch(`https://rickandmortyapi.com/api/character`)
