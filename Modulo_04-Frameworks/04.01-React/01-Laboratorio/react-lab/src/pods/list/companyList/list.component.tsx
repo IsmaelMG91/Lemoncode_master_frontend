@@ -1,6 +1,7 @@
 import React from "react";
 import * as vm from "./list.vm";
-import { Member, ShowLessButton, ShowMoreButton, TableHeader } from "../components";
+import { TableHeader } from "@/pods/list/components";
+import { Member, ShowMoreButton, ShowLessButton } from "./components";
 
 
 interface Props {

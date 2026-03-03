@@ -3,17 +3,18 @@ import { getRickAndMortyCharacters } from "../api/api";
 import type { Character } from "./rickMortyList.vm";
 import { mapCharactersToVM } from "./rickMortyList.mappers";
 import { RickAndMortyList } from "./rickMortyList.component";
+import { PageNameContext, SearchCharacterContext } from "@/context";
 
-export const RickAndMortyListPod : React.FC = () => {
-    const [characters, setCharacters] = React.useState<Character[]>([]);
+export const RickAndMortyListPod: React.FC = () => {
+  const [characters, setCharacters] = React.useState<Character[]>([]);
+  const char = React.useContext(SearchCharacterContext);
 
-    React.useEffect(() => {
-        getRickAndMortyCharacters()
-        .then(mapCharactersToVM)
-        .then(setCharacters)
-    }, []);
+  const pageName = React.useContext(PageNameContext);
 
-    return (
-            <RickAndMortyList characters={characters}></RickAndMortyList>
-    )
-}
+  React.useEffect(() => {
+    pageName.setPageName("character");
+    getRickAndMortyCharacters(char).then(mapCharactersToVM).then(setCharacters);
+  }, [char.character]);
+
+  return <RickAndMortyList characters={characters}></RickAndMortyList>;
+};

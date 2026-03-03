@@ -1,18 +1,25 @@
-
 import { AppRoutes } from "@/router";
-import { OrganizationProvider } from "./context/organization.context.tsx";
-import { PageProvider } from "./context/page.context.tsx";
+import {
+  SearchValueProvider,
+  PageProvider,
+  PageNameProvider,
+  SearchCharacterProvider,
+} from "./context";
 
 export const App: React.FC = () => {
   return (
     <>
-    <OrganizationProvider>
-      <PageProvider>
-        <AppRoutes/>
-      </PageProvider>
-    </OrganizationProvider>
+      <PageNameProvider>
+        <SearchValueProvider>
+          <SearchCharacterProvider>
+            <PageProvider>
+              <AppRoutes />
+            </PageProvider>
+          </SearchCharacterProvider>
+        </SearchValueProvider>
+      </PageNameProvider>
     </>
-  )
-}
+  );
+};
 
 export default App;

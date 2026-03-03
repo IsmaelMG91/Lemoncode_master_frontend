@@ -1,8 +1,8 @@
 import React from "react";
 
 export interface PageModel {
-    page: number;
-    setPage: (page: number) => void;
+    page: number,
+    setPage: (page: number) => void,
 }
 
 export const PageContext = React.createContext<PageModel>({

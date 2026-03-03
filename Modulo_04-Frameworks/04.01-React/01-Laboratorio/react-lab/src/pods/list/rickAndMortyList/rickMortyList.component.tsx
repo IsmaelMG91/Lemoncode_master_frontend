@@ -1,7 +1,7 @@
 import React from "react";
 import * as vm from "./rickMortyList.vm";
-import { ShowLessButton, ShowMoreButton, TableHeader } from "../components";
-import { Character } from "./components/character.component";
+import { TableHeader } from "../components";
+import { Character } from "./components";
 
 
 interface Props {
@@ -17,10 +17,6 @@ export const RickAndMortyList: React.FC<Props> = (props) => {
             {characters.map((character) => (
                     <Character key={character.id} data={character}></Character>
                 ))}
-        </div>
-        <div>
-            <ShowMoreButton/>
-            <ShowLessButton/>
         </div>
     </>
     )

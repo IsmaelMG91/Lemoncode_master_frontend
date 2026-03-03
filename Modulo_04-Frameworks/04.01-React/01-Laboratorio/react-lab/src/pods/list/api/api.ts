@@ -1,17 +1,19 @@
 import type { Member, RickAndMortyCharacter } from "./api.model";
-import type { OrganizationModel, PageModel } from "@/context";
+import type { SearchValueModel, PageModel, SearchCharacterModel } from "@/context";
 
 
-export const getMembers = async (org:OrganizationModel, page:PageModel): Promise<Member[]> => {
+export const getMembers = async (org:SearchValueModel, page:PageModel): Promise<Member[]> => {
 
-    return fetch(`https://api.github.com/orgs/${org.organization}/members?per_page=${page.page}`)
+    return fetch(`https://api.github.com/orgs/${org.searchValue}/members?per_page=${page.page}`)
     .then((response) => response.json())
 }
 
-export const getRickAndMortyCharacters = async () : Promise<RickAndMortyCharacter[]> => {
+
+// Métodos para api Rick and Morty
+export const getRickAndMortyCharacters = async ( char: SearchCharacterModel) : Promise<RickAndMortyCharacter[]> => {
 
     return (
-        fetch(`https://rickandmortyapi.com/api/character`)
+        fetch(`https://rickandmortyapi.com/api/character/?name=${char.character}`)
         .then((response) => response.json())
         .then((data) => data.results)
     )
