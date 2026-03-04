@@ -1,23 +1,21 @@
 import React, { useContext } from "react";
 import { SearchCharacterContext } from "@/context";
+import { useDebouncedCallback } from "use-debounce";
 
 export const SearchCharacterButton: React.FC = () => {
   const char = useContext(SearchCharacterContext);
-  const [character, setCharacter] = React.useState<string>(char.character);
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  const charDebounced = useDebouncedCallback((character) => {
     char.setCharacter(character);
-  };
+  }, 500);
 
   return (
-    <form className="search-button" onSubmit={handleSubmit}>
+    <form className="search-button">
       <input
         type="text"
+        placeholder="search"
         defaultValue={char.character}
-        onChange={(e) => setCharacter(e.target.value)}
+        onChange={(e) => charDebounced(e.target.value)}
       />
-      <button type="submit">Buscar</button>
     </form>
   );
 };
