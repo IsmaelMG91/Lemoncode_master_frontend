@@ -9,9 +9,9 @@ const router = createRouter({
       name: 'home',
       component: HomePage,
       children: [{
-        path:'list/:id',
-        name: 'list',
-        component: () => import('@/components/ListModal.vue'),
+        path:'menu/:day',
+        name: 'menu',
+        component: () => import('@/components/MenuModal.vue'),
         props: true
       }]
     }
